@@ -26,7 +26,16 @@ public class MyCglibFactory implements MethodInterceptor {
         return (SomeService) enhancer.create();
     }
 
-    //回调方法
+    /**
+     * 回调方法
+     *
+     * @param obj
+     * @param method
+     * @param args
+     * @param proxy
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
         Object result = method.invoke(target, args);

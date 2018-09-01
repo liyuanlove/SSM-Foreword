@@ -17,9 +17,13 @@ public class MyTest {
                 target.getClass().getClassLoader(),//目标类的类加载器
                 target.getClass().getInterfaces(),//目标类所实现的所有接口
                 new InvocationHandler() {//匿名内部类
-                    //proxy：代理对象
-                    //method：目标方法
-                    //args：目标方法的参数列表
+                    /**
+                     * @param proxy 代理对象
+                     * @param method 目标方法
+                     * @param args 目标方法的参数列表
+                     * @return
+                     * @throws Throwable
+                     */
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         //调用目标方法
